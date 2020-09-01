@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import axios from "axios";
+import User from './Components/User';
+import Followers from './Components/Followers';
 
 export default class App extends React.Component {
   constructor() {
@@ -15,15 +17,11 @@ export default class App extends React.Component {
     axios
       .get('https://api.github.com/users/cory-thomas')
       .then(response => {
-        console.log(response.data)
         this.setState({ user: response.data });
         axios.get("https://api.github.com/users/Cory-Thomas/followers")
           .then(response => {
-            console.log(response.data)
-            response.data.forEach(follower => {
-              this.setState({
-                      userFollowers: response.data
-                    })
+            this.setState({
+              userFollowers: response.data
             })
           })
           .catch(error => {
@@ -39,8 +37,8 @@ export default class App extends React.Component {
     return (
       <div>
         hey
-        {/* <RootUser user={this.state.user} />
-        <FollowerList followers={this.state.followers} /> */}
+        <User />
+        <Followers />
       </div>
     );
   }
