@@ -36,8 +36,10 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="page">
+        <h1>Me</h1>
         <User user={this.state.user} />
+        <h2>Followers</h2>
         <Followers followers={this.state.userFollowers} />
       </div>
     );
