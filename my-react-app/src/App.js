@@ -20,6 +20,7 @@ export default class App extends React.Component {
         this.setState({ user: response.data });
         axios.get("https://api.github.com/users/Cory-Thomas/followers")
           .then(response => {
+            console.log(response.date)
             this.setState({
               userFollowers: response.data
             })
@@ -36,9 +37,8 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        hey
-        <User />
-        <Followers />
+        <User user={this.state.user} />
+        <Followers followers={this.state.userFollowers} />
       </div>
     );
   }

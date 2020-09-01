@@ -1,7 +1,10 @@
 import React from 'react';
 
-export default function Followers(){
+export default function Followers({user}){
     return(
-        <div>User</div>
+        <div>
+            <img src={user.avatar_url} alt='user' />
+            <div>{user.name}</div>
+        </div>
     )
 }
