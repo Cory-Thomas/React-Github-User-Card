@@ -1,0 +1,24 @@
+.page{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.followers{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.follower{
+    padding: 2%;
+    margin: 1%;
+    background-color: aquamarine;
+}
+
+img {
+    width: 300px;
+    padding-bottom: 1%;
+}
